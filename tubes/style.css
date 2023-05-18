@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Merriweather&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+html,
+body {
+  /* font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif; */
+  height: 100%;
+  scroll-behavior: smooth !important;
+  background-color: rgba(48, 213, 200, 0.3);
+}
+
+.footer .platform a {
+  color: black;
+}
+
+
+
+.sd .materi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sd h3 {
+  margin-left: 100px;
+  margin-top: 100px;
+  border-bottom: 2px solid turquoise;
+}
+
+h4 {
+  padding: 20px;
+  text-align: center;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.kosong {
+  height: 100px;
+  background-color: rgba(48, 213, 200, 0.3);
+ 
+}
+
+
+.footer {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 200px;
+  background-color: darkturquoise;
+}
+
+.footer .contact i {
+  margin-right: 5px;
+}
+
