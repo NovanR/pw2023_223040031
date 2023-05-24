@@ -172,3 +172,14 @@ h2 {
     height: 100%;
   }
 }
+
+@media (max-width: 570px) {
+  .coba .smp,
+  .coba .sma {
+      padding: 10px;
+      position: relative;
+  }
+  .coba {
+      height: 300px;
+  }
+}

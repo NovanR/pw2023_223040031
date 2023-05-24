@@ -112,122 +112,43 @@ $kelas9 = [
 ]
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$title = 'SMP';
+$css = 'css/style5.css';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintar Matematika</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style5.css" />
-    <link rel="icon" href="img/math.png" type="image/x-icon" />
-    <link rel="stylesheet" href="fontawesome/css/all.css" />
-    <style>
-        @media(max-width: 1440px) {
-            .smp .isi .materi .card {
-                margin-top: 20px;
-            }
+<?php require('views/partials/css.php')  ?>
+
+<style>
+    @media (max-width: 1440px) {
+        .smp .isi .materi .card {
+            margin-top: 20px;
         }
+    }
 
-        @media (max-width: 550px) {
-            .footer {
-                height: 100%;
-            }
+    @media (max-width: 550px) {
+        .footer {
+            height: 100%;
         }
+    }
 
-        @media (max-width: 450px) {
-            h3 {
-                margin-left: 10px;
-            }
+    @media (max-width: 450px) {
+        h3 {
+            margin-left: 10px;
         }
-        .card {
-            width: 18rem;
-            background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-        }
+    }
 
-        .card-title,
-        .card-text {
-            color: white;
-        }
-    </style>
-</head>
+    .card {
+        width: 18rem;
+        background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    }
 
-<body>
+    .card-title,
+    .card-text {
+        color: white;
+    }
+</style>
 
-  <?php require('header2.php');  ?>
-
-    <!-- SMP -->
-    <div class="smp" id="smp">
-        <h3 style=" margin-left: 100px;
-                    margin-top: 100px; 
-                    border-bottom: 2px solid turquoise;">
-            Sekolah Menengah Pertama
-        </h3>
-        <div class="isi" style="background-color: rgba(48, 213, 200, .3); border-radius: 5px;">
-            <!-- Kelas 7 -->
-
-            <h4>Kelas 7</h4>
-            <div class="materi">
-                <?php foreach ($kelas7 as $k7) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_smp/th7/<?= $k7["gambar"]; ?>" class="card-img-top" alt="materi kelas 7" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k7["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k7["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k7["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 8 -->
-
-            <h4>Kelas 8</h4>
-            <div class="materi">
-                <?php foreach ($kelas8 as $k8) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_smp/th8/<?= $k8["gambar"]; ?>" class="card-img-top" alt="materi kelas 8" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k8["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k8["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k8["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 9 -->
-
-            <h4>Kelas 9</h4>
-            <div class="materi">
-                <?php foreach ($kelas9 as $k9) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_smp/th9/<?= $k9["gambar"]; ?>" class="card-img-top" alt="materi kelas 9" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k9["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k9["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k9["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="kosong" style="height: 100px; background-color: rgba(48, 213, 200, .3);"></div>
-
-   <?php require('footer.php')  ?>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php require('views/partials/header2.php');  ?>
+<?php require('views/smp.view.php')  ?>
+<?php require('views/partials/footer.php')  ?>

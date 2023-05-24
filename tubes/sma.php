@@ -115,20 +115,13 @@ $kelas12 = [
 
 ?>
 
+<?php 
+$title = 'SMA';
+$css = 'css/style6.css';
+?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php require('views/partials/css.php')  ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintar Matematika</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style6.css" />
-    <link rel="icon" href="img/math.png" type="image/x-icon" />
-    <link rel="stylesheet" href="fontawesome/css/all.css" />
-</head>
 <style>
     .card {
         width: 18rem;
@@ -147,79 +140,8 @@ $kelas12 = [
     }
 </style>
 
-<body>
+     <?php require('views/partials/header2.php');  ?>
 
-    <?php require('header2.php');  ?>
+    <?php require('views/sma.view.php')  ?>
 
-    <!-- SMA -->
-    <div class="sma" id="sma">
-        <h3 style=" margin-left: 100px;
-                    margin-top: 100px; 
-                    border-bottom: 2px solid turquoise;">
-            Sekolah Menengah Atas
-        </h3>
-        <div class="isi" style="background-color: rgba(48, 213, 200, .3); border-radius: 5px;">
-            <!-- Kelas 10 -->
-
-            <h4>Kelas 10</h4>
-            <div class="materi">
-                <?php foreach ($kelas10 as $k10) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th10/<?= $k10["gambar"]; ?>" class="card-img-top" alt="materi kelas 10" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k10["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k10["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k10["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 11 -->
-
-            <h4>Kelas 11</h4>
-            <div class="materi">
-                <?php foreach ($kelas11 as $k11) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th11/<?= $k11["gambar"]; ?>" class="card-img-top" alt="materi kelas 11" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k11["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k11["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k11["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 12 -->
-
-            <h4>Kelas 12</h4>
-            <div class="materi">
-                <?php foreach ($kelas12 as $k12) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th12/<?= $k12["gambar"]; ?>" class="card-img-top" alt="materi kelas 12" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $k12["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $k12["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $k12["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-        </div>
-    </div>
-
-    <div class="kosong" style="height: 100px; background-color: rgba(48, 213, 200, .3);"></div>
-
-    <?php require('footer.php');  ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    <?php require('views/partials/footer.php');  ?>

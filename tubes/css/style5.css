@@ -40,7 +40,6 @@ h5 {
   background-color: rgba(48, 213, 200, 0.3);
 }
 
-
 .footer {
   padding-top: 20px;
   display: flex;
@@ -53,3 +52,4 @@ h5 {
 .footer .contact i {
   margin-right: 5px;
 }
+

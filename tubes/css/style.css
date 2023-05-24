@@ -3,8 +3,6 @@
 
 html,
 body {
-  /* font-family: 'Inter', sans-serif;
-  font-family: 'Merriweather', serif; */
   height: 100%;
   scroll-behavior: smooth !important;
   background-color: rgba(48, 213, 200, 0.3);
@@ -13,8 +11,6 @@ body {
 .footer .platform a {
   color: black;
 }
-
-
 
 .sd .materi {
   display: flex;

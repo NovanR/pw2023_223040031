@@ -4,7 +4,7 @@ $sekolah_dasar1 = [
         "gambar" => "th1.jpg",
         "judul" => "Bilangan cacah",
         "penjelasan" => "Bilangan cacah selalu diawali dari angka nol (0) hingga tidak
-    terhingga.",
+                        terhingga.",
         "youtube" => "https://www.youtube.com/watch?v=edVc-UrSgHk"
     ],
     [
@@ -32,8 +32,7 @@ $sekolah_dasar1 = [
     [
         "gambar" => "th5.jpg",
         "judul" => "Nilai Tempat",
-        "penjelasan" => "Setiap bilangan tersusun dari sebuah angka atau beberapa angka.
-              Masing-masing angka memiliki nilai tempat dalam suatu bilangan.",
+        "penjelasan" => "Nilai tempat adalah nilai yang dimiliki oleh angka-angka penyusun bilangan berdasarkan letak atau tempat angkanya.",
         "youtube" => "https://www.youtube.com/watch?v=Wl1oVbH0oo8"
     ]
 ];
@@ -234,176 +233,40 @@ $sekolah_dasar6 = [
 ?>
 
 <?php
+$title = 'SD';
+$css = 'css/style.css';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php require('views/partials/css.php')  ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pintar Matematika</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/math.png" type="image/x-icon" />
-    <link rel="stylesheet" href="fontawesome/css/all.css" />
-    <style>
-        @media(max-width: 1440px) {
-            .sd .isi .materi .card {
-                margin-top: 20px;
-            }
+<style>
+    @media(max-width: 1440px) {
+        .sd .isi .materi .card {
+            margin-top: 20px;
         }
+    }
 
-        @media (max-width: 550px) {
-            .footer {
-                height: 100%;
-            }
+    @media (max-width: 550px) {
+        .footer {
+            height: 100%;
         }
+    }
 
-        * {
-            font-family: "Noto Sans", sans-serif;
-        }
+    * {
+        font-family: "Noto Sans", sans-serif;
+    }
 
-        .card {
-            width: 18rem;
-            background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-        }
+    .card {
+        width: 18rem;
+        background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    }
 
-        .card-title,
-        .card-text {
-            color: white;
-        }
-    </style>
-</head>
+    .card-title,
+    .card-text {
+        color: white;
+    }
+</style>
 
-<body>
-
-    <?php require('header2.php');  ?>
-
-    <!-- SD -->
-    <div class="sd" id="sd">
-        <h3 style=" margin-left: 100px;
-                    margin-top: 100px; 
-                    border-bottom: 2px solid turquoise;">
-            Sekolah Dasar
-        </h3>
-        <div class="isi" style="background-color: rgba(48, 213, 200, .3); border-radius: 5px;">
-            <!-- Kelas 1 -->
-
-            <h4>Kelas 1</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar1 as $sd1) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th1/<?= $sd1["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd1["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd1["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd1["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 2 -->
-
-            <h4>Kelas 2</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar2 as $sd2) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th2/<?= $sd2["gambar"]; ?>" class="card-img-top" alt="materi kelas 2" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd2["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd2["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd2["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 3 -->
-
-            <h4>Kelas 3</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar3 as $sd3) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th3/<?= $sd3["gambar"]; ?>" class="card-img-top" alt="materi kelas 3" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd3["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd3["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd3["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 4 -->
-
-            <h4>Kelas 4</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar4 as $sd4) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th4/<?= $sd4["gambar"]; ?>" class="card-img-top" alt="materi kelas 4" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd4["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd4["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd4["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 5 -->
-            <h4>Kelas 5</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar5 as $sd5) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th5/<?= $sd5["gambar"]; ?>" class="card-img-top" alt="materi kelas 5" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd5["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd5["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd5["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-
-            <!-- Kelas 6 -->
-            <h4>Kelas 6</h4>
-            <div class="materi">
-                <?php foreach ($sekolah_dasar6 as $sd6) {  ?>
-                    <div class="card" style="width: 18rem">
-                        <img src="img/th_sd/th6/<?= $sd6["gambar"]; ?>" class="card-img-top" alt="materi kelas 6" />
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $sd6["judul"]; ?></h5>
-                            <p class="card-text">
-                                <?= $sd6["penjelasan"]; ?>
-                            </p>
-                            <a href="<?= $sd6["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
-                        </div>
-                    </div>
-                <?php }  ?>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="kosong"></div>
-
-    <?php require('footer.php');  ?>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php require('views/partials/header2.php')  ?>
+<?php require('views/sd.view.php')  ?>;
+<?php require('views/partials/footer.php');  ?>
