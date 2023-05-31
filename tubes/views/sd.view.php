@@ -1,4 +1,12 @@
 <?php require('functions.php')  ?>
+<?php
+$sekolah_dasar = query('SELECT * FROM sd1 WHERE nama = "kelas_1" ');
+$sekolah_dasar2 = query('SELECT * FROM sd1 WHERE nama = "kelas_2" ');
+$sekolah_dasar3 = query('SELECT * FROM sd1 WHERE nama = "kelas_3" ');
+$sekolah_dasar4 = query('SELECT * FROM sd1 WHERE nama = "kelas_4" ');
+$sekolah_dasar5 = query('SELECT * FROM sd1 WHERE nama = "kelas_5" ');
+$sekolah_dasar6 = query('SELECT * FROM sd1 WHERE nama = "kelas_6" ');
+?>
 
 <div class="sd" id="sd">
     <h3 style=" margin-left: 100px;
@@ -11,10 +19,9 @@
 
         <h4>Kelas 1</h4>
         <div class="materi">
-            <?php foreach ($sekolah_dasar1 as $sd1) {  ?>
+            <?php foreach ($sekolah_dasar as $sd1) {  ?>
                 <div class="card" style="width: 18rem">
-                    
-                    <img src="img/th_sd/th1/<?= $sd1["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
+                    <img src="img/<?= $sd1["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd1["judul"]; ?></h5>
                         <p class="card-text">
@@ -32,7 +39,7 @@
         <div class="materi">
             <?php foreach ($sekolah_dasar2 as $sd2) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_sd/th2/<?= $sd2["gambar"]; ?>" class="card-img-top" alt="materi kelas 2" />
+                    <img src="img/<?= $sd2["gambar"]; ?>" class="card-img-top" alt="materi kelas 2" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd2["judul"]; ?></h5>
                         <p class="card-text">
@@ -50,7 +57,7 @@
         <div class="materi">
             <?php foreach ($sekolah_dasar3 as $sd3) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_sd/th3/<?= $sd3["gambar"]; ?>" class="card-img-top" alt="materi kelas 3" />
+                    <img src="img/<?= $sd3["gambar"]; ?>" class="card-img-top" alt="materi kelas 3" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd3["judul"]; ?></h5>
                         <p class="card-text">
@@ -68,7 +75,7 @@
         <div class="materi">
             <?php foreach ($sekolah_dasar4 as $sd4) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_sd/th4/<?= $sd4["gambar"]; ?>" class="card-img-top" alt="materi kelas 4" />
+                    <img src="img/<?= $sd4["gambar"]; ?>" class="card-img-top" alt="materi kelas 4" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd4["judul"]; ?></h5>
                         <p class="card-text">
@@ -85,7 +92,7 @@
         <div class="materi">
             <?php foreach ($sekolah_dasar5 as $sd5) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_sd/th5/<?= $sd5["gambar"]; ?>" class="card-img-top" alt="materi kelas 5" />
+                    <img src="img/<?= $sd5["gambar"]; ?>" class="card-img-top" alt="materi kelas 5" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd5["judul"]; ?></h5>
                         <p class="card-text">
@@ -102,7 +109,7 @@
         <div class="materi">
             <?php foreach ($sekolah_dasar6 as $sd6) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_sd/th6/<?= $sd6["gambar"]; ?>" class="card-img-top" alt="materi kelas 6" />
+                    <img src="img/<?= $sd6["gambar"]; ?>" class="card-img-top" alt="materi kelas 6" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $sd6["judul"]; ?></h5>
                         <p class="card-text">

@@ -4,7 +4,7 @@ if (isset($_POST["submit"])) {
   // cek username dan password
   if ($_POST["email"] == "novanramdan7@gmail.com" && $_POST["password"] == "123") {
     // jika benar redirect ke halaman admin
-    header("Location: admin.php");
+    header("Location: adminn/admin.php");
     exit;
   } else {
     // jika salah tampilkan error
@@ -19,6 +19,7 @@ if (isset($_POST["submit"])) {
 <?php
 $title = 'Login';
 $css = 'css/style2.css';
+$font = 'fontawsome/css/all.css'
 ?>
 
 <?php require('views/partials/css.php')  ?>

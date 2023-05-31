@@ -1,3 +1,12 @@
+<?php require('functions.php')  ?>
+<?php 
+$kelas10 = query('SELECT * FROM sma WHERE nama = "kelas_10" ');
+$kelas11 = query('SELECT * FROM sma WHERE nama = "kelas_11" ');
+$kelas12 = query('SELECT * FROM sma WHERE nama = "kelas_12" ');
+
+?>
+
+
 <div class="sma" id="sma">
         <h3 style=" margin-left: 100px;
                     margin-top: 100px; 
@@ -11,7 +20,7 @@
             <div class="materi">
                 <?php foreach ($kelas10 as $k10) {  ?>
                     <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th10/<?= $k10["gambar"]; ?>" class="card-img-top" alt="materi kelas 10" />
+                        <img src="img/<?= $k10["gambar"]; ?>" class="card-img-top" alt="materi kelas 10" />
                         <div class="card-body">
                             <h5 class="card-title"><?= $k10["judul"]; ?></h5>
                             <p class="card-text">
@@ -29,7 +38,7 @@
             <div class="materi">
                 <?php foreach ($kelas11 as $k11) {  ?>
                     <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th11/<?= $k11["gambar"]; ?>" class="card-img-top" alt="materi kelas 11" />
+                        <img src="img/<?= $k11["gambar"]; ?>" class="card-img-top" alt="materi kelas 11" />
                         <div class="card-body">
                             <h5 class="card-title"><?= $k11["judul"]; ?></h5>
                             <p class="card-text">
@@ -47,7 +56,7 @@
             <div class="materi">
                 <?php foreach ($kelas12 as $k12) {  ?>
                     <div class="card" style="width: 18rem">
-                        <img src="img/th_sma/th12/<?= $k12["gambar"]; ?>" class="card-img-top" alt="materi kelas 12" />
+                        <img src="img/<?= $k12["gambar"]; ?>" class="card-img-top" alt="materi kelas 12" />
                         <div class="card-body">
                             <h5 class="card-title"><?= $k12["judul"]; ?></h5>
                             <p class="card-text">

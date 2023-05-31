@@ -1,3 +1,11 @@
+<?php require('functions.php')  ?>
+<?php 
+$kelas7 = query('SELECT * FROM smp WHERE nama = "kelas_7" ');
+$kelas8 = query('SELECT * FROM smp WHERE nama = "kelas_8" ');
+$kelas9 = query('SELECT * FROM smp WHERE nama = "kelas_9" ');
+?>
+
+
 <div class="smp" id="smp">
     <h3 style=" margin-left: 100px;
                     margin-top: 100px; 
@@ -11,7 +19,7 @@
         <div class="materi">
             <?php foreach ($kelas7 as $k7) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_smp/th7/<?= $k7["gambar"]; ?>" class="card-img-top" alt="materi kelas 7" />
+                    <img src="img/<?= $k7["gambar"]; ?>" class="card-img-top" alt="materi kelas 7" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $k7["judul"]; ?></h5>
                         <p class="card-text">
@@ -29,7 +37,7 @@
         <div class="materi">
             <?php foreach ($kelas8 as $k8) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_smp/th8/<?= $k8["gambar"]; ?>" class="card-img-top" alt="materi kelas 8" />
+                    <img src="img/<?= $k8["gambar"]; ?>" class="card-img-top" alt="materi kelas 8" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $k8["judul"]; ?></h5>
                         <p class="card-text">
@@ -47,7 +55,7 @@
         <div class="materi">
             <?php foreach ($kelas9 as $k9) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/th_smp/th9/<?= $k9["gambar"]; ?>" class="card-img-top" alt="materi kelas 9" />
+                    <img src="img/<?= $k9["gambar"]; ?>" class="card-img-top" alt="materi kelas 9" />
                     <div class="card-body">
                         <h5 class="card-title"><?= $k9["judul"]; ?></h5>
                         <p class="card-text">

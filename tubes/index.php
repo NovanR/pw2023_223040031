@@ -1,6 +1,7 @@
 <?php
 $css = 'css/style7.css';
 $title = 'Home';
+$font = 'fontawesome/css/all.css'
 ?>
 
     <?php require('views/partials/css.php')  ?>

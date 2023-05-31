@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(
+    120deg,
+    #b3ecec,
+    #89ecda,
+    #43e8d8,
+    #40e0d0,
+    #3bd6c6
+  );
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tambah {
+  width: 800px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+  background: radial-gradient(
+    circle at 0.1% 99.8%,
+    rgb(0, 164, 189) 0%,
+    rgb(0, 189, 165) 90%
+  );
+}
+
+.tambah a {
+  text-decoration: none;
+}
+
+.tambah button {
+    background: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+    border: white;
+    color: black;
+}
+
+
+@media (max-width: 800px) {
+  .tambah {
+    width: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tambah {
+    width: 100%;
+  }
+}
+
+.tambah form a:hover {
+  color: blue;
+}
