@@ -1,6 +1,22 @@
 <?php
 $title = 'Daftar';
 $css = 'css/style3.css';
+$font = 'fontawesome/css/all.css';
+$icon = 'img/math.png';
+
+
+require('views/functions.php');
+
+if (isset($_POST['register'])) {
+  if (registrasi($_POST) > 0) {
+    echo "<script>
+          alert ('User Baru Berhasil Ditambahkan');
+          </script>
+          ";
+  } else {
+    echo mysqli_error($conn);
+  }
+}
 ?>
 
 <?php require('views/partials/css.php')  ?>
@@ -25,7 +41,6 @@ $css = 'css/style3.css';
       display: none;
     }
   }
-
 </style>
 
 </head>
@@ -50,6 +65,7 @@ $css = 'css/style3.css';
           <input type="email" name="email" id="email" placeholder="Email" style="transform: translateX(10px)" required />
         </div>
         <br />
+        <input type="hidden" name="role" id="role" value="user">
         <label for="password" style="margin-top: -10px" ;>Masukkan Password:
         </label>
         <br />
@@ -58,15 +74,15 @@ $css = 'css/style3.css';
           <input type="password" name="password" id="password" placeholder="Password" required style="transform: translateX(10px)" ; />
         </div>
         <br />
-        <label for="password" style="margin-top: -10px" ;>Konfirmasi Password:
+        <label for="password2" style="margin-top: -10px" ;>Konfirmasi Password:
         </label>
         <br />
         <div class="input-icons">
           <i class="fa-solid fa-key"></i>
-          <input type="password" name="password" id="password" placeholder="Password" required style="transform: translateX(10px)" ; />
+          <input type="password" name="password2" id="password2" placeholder="Password" required style="transform: translateX(10px)" ; />
         </div>
         <br />
-        <button type="submit" style="margin-top: -10px; width: 30%">Buat Akun</button>
+        <button type="submit" name="register" style="margin-top: -10px; width: 30%">Buat Akun</button>
       </form>
     </div>
     <div class="gambar">

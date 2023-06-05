@@ -1,11 +1,20 @@
 <?php require('functions.php')  ?>
 <?php
-$sekolah_dasar = query('SELECT * FROM sd1 WHERE nama = "kelas_1" ');
+$sekolah_dasar = query('SELECT * FROM sd1 LIMIT 30, 5');
+$sekolah_dasar1 = query('SELECT * FROM sd1 WHERE nama = "kelas_1" ');
 $sekolah_dasar2 = query('SELECT * FROM sd1 WHERE nama = "kelas_2" ');
 $sekolah_dasar3 = query('SELECT * FROM sd1 WHERE nama = "kelas_3" ');
 $sekolah_dasar4 = query('SELECT * FROM sd1 WHERE nama = "kelas_4" ');
 $sekolah_dasar5 = query('SELECT * FROM sd1 WHERE nama = "kelas_5" ');
 $sekolah_dasar6 = query('SELECT * FROM sd1 WHERE nama = "kelas_6" ');
+$font = '../fontawesome/cs/all.css';
+
+// jumlah data perhalaman
+
+
+if (isset($_POST["cari"])) {
+    $sekolah_dasar = cari_sd($_POST["search"]);
+}
 ?>
 
 <div class="sd" id="sd">
@@ -14,20 +23,41 @@ $sekolah_dasar6 = query('SELECT * FROM sd1 WHERE nama = "kelas_6" ');
                     border-bottom: 2px solid turquoise;">
         Sekolah Dasar
     </h3>
+
+
+
+
+    <div class="semua_data" id="semua" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <?php foreach ($sekolah_dasar as $sd11) {  ?>
+            <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                <img src="img/<?= $sd11["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
+                <div class="card-body">
+                    <h5 class="card-title"><?= $sd11["judul"]; ?></h5>
+                    <p class="card-text">
+                        <?= $sd11["penjelasan"]; ?>
+                    </p>
+                    <a href="<?= $sd11["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
+                </div>
+            </div>
+        <?php }  ?>
+    </div>
+
+
+
     <div class="isi" style="background-color: rgba(48, 213, 200, .3); border-radius: 5px;">
         <!-- Kelas 1 -->
 
         <h4>Kelas 1</h4>
         <div class="materi">
-            <?php foreach ($sekolah_dasar as $sd1) {  ?>
+            <?php foreach ($sekolah_dasar1 as $sd11) {  ?>
                 <div class="card" style="width: 18rem">
-                    <img src="img/<?= $sd1["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
+                    <img src="img/<?= $sd11["gambar"]; ?>" class="card-img-top" alt="materi kelas 1" />
                     <div class="card-body">
-                        <h5 class="card-title"><?= $sd1["judul"]; ?></h5>
+                        <h5 class="card-title"><?= $sd11["judul"]; ?></h5>
                         <p class="card-text">
-                            <?= $sd1["penjelasan"]; ?>
+                            <?= $sd11["penjelasan"]; ?>
                         </p>
-                        <a href="<?= $sd1["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
+                        <a href="<?= $sd11["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
                     </div>
                 </div>
             <?php }  ?>

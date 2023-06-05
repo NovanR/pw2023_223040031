@@ -1,8 +1,14 @@
 <?php require('functions.php')  ?>
-<?php 
+<?php
+$smp = query('SELECT * FROM smp LIMIT 15, 5');
 $kelas7 = query('SELECT * FROM smp WHERE nama = "kelas_7" ');
 $kelas8 = query('SELECT * FROM smp WHERE nama = "kelas_8" ');
 $kelas9 = query('SELECT * FROM smp WHERE nama = "kelas_9" ');
+
+if (isset($_POST["cari"])) {
+    $smp = cari_smp($_POST["search"]);
+}
+
 ?>
 
 
@@ -13,6 +19,24 @@ $kelas9 = query('SELECT * FROM smp WHERE nama = "kelas_9" ');
         Sekolah Menengah Pertama
     </h3>
     <div class="isi" style="background-color: rgba(48, 213, 200, .3); border-radius: 5px;">
+
+        <div class="materi">
+            <?php foreach ($smp as $k7) {  ?>
+                <div class="card" style="width: 18rem">
+                    <img src="img/<?= $k7["gambar"]; ?>" class="card-img-top" alt="materi kelas 7" />
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $k7["judul"]; ?></h5>
+                        <p class="card-text">
+                            <?= $k7["penjelasan"]; ?>
+                        </p>
+                        <a href="<?= $k7["youtube"]; ?>" target="_blank" class="btn btn-primary">Tonton Video</a>
+                    </div>
+                </div>
+            <?php }  ?>
+        </div>
+
+
+
         <!-- Kelas 7 -->
 
         <h4>Kelas 7</h4>

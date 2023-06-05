@@ -35,13 +35,13 @@ $css = 'css/style8.css';
                 <br />
                 <div class="input-icons">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="email" id="email" placeholder="Email" style="transform: translateX(10px);" required />
+                    <input type="email" name="email" id="email" placeholder="Email" style="transform: translateX(10px);" required autocomplete="off" />
                 </div>
                 <br />
                 <label for="nama">Masukkan Nama: </label>
                 <div class="input-icons">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="nama" id="nama" placeholder="Nama" style="transform: translateX(10px)" required>
+                    <input type="text" name="nama" id="nama" placeholder="Nama" style="transform: translateX(10px)" required autocomplete="off">
                 </div>
                 <br>
                 <label for="keluhan">Keluhan: </label>

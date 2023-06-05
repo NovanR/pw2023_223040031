@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['login'])) {
+    header("Location: ../index.php");
+    exit;
+}
+
+
 require('../views/functions.php');
 
 function tambah($data) {
@@ -6,10 +15,15 @@ function tambah($data) {
     
     // ambil data dari tiap elemen
     $nama = htmlspecialchars($data["nama"]);
-    $gambar = htmlspecialchars($data["gambar"]);
     $judul = htmlspecialchars($data["judul"]);
     $penjelasan = htmlspecialchars($data["penjelasan"]);
     $youtube = htmlspecialchars($data["youtube"]);
+
+    // upload gambar
+    $gambar = upload();
+    if(!$gambar) {
+        return false;
+    }
 
 
     // query insert
@@ -52,14 +66,14 @@ $css = '../css/style9.css';
 <body>
     <div class="tambah">
         <h1>Tambah Data</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
         <div class="mb-4 w-30">
                 <label for="nama" class="form-label">Nama: </label>
                 <input type="text" name="nama" class="form-control" id="nama" required>
             </div>
             <div class="mb-4 w-30">
                 <label for="gambar" class="form-label">Gambar: </label>
-                <input type="text" name="gambar" class="form-control" id="gambar" required>
+                <input type="file" name="gambar" class="form-control" id="gambar" required>
             </div>
             <div class="mb-4 w-30">
                 <label for="judul" class="form-label">Judul: </label>

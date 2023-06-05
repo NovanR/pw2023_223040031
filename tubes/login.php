@@ -1,17 +1,44 @@
 <?php
-//cek tombol submit  
-if (isset($_POST["submit"])) {
-  // cek username dan password
-  if ($_POST["email"] == "novanramdan7@gmail.com" && $_POST["password"] == "123") {
-    // jika benar redirect ke halaman admin
-    header("Location: adminn/admin.php");
-    exit;
-  } else {
-    // jika salah tampilkan error
-    $error = true;
-  }
+
+session_start();
+
+if (isset($_SESSION['login'])) {
+  header('Location: index.php');
+  exit;
 }
 
+require('views/functions.php');
+
+//cek tombol submit  
+if (isset($_POST["submit"])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email' ");
+
+  // cek username
+  if (mysqli_num_rows($result) === 1) {
+
+    // cek password
+    $row = mysqli_fetch_assoc($result);
+    if (password_verify($password, $row['password'])) {
+
+      // set session
+      $_SESSION['login'] = true;
+
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['role'] = $row['role'];
+
+      if ($row['role'] == 'admin') {
+        header("Location: adminn/admin.php");
+      } elseif ($row['role'] == 'user' ) {
+        header("Location: index.php");
+        exit;
+      }
+    }
+  }
+  $error = true;
+}
 
 ?>
 
@@ -25,7 +52,6 @@ $font = 'fontawsome/css/all.css'
 <?php require('views/partials/css.php')  ?>
 
 <style>
-
   body {
     display: flex;
     align-items: center;
@@ -65,6 +91,7 @@ $font = 'fontawsome/css/all.css'
     .login2 {
       margin-top: 0;
     }
+
     .login2 .gambar {
       display: none;
     }
@@ -93,7 +120,7 @@ $font = 'fontawsome/css/all.css'
         <br />
         <div class="input-icons">
           <i class="fa-solid fa-envelope"></i>
-          <input type="email" name="email" id="email" placeholder="Email" style="transform: translateX(10px)" required />
+          <input type="text" name="email" id="email" placeholder="Email" style="transform: translateX(10px)" required autocomplete="off" />
         </div>
         <br />
         <label for="password" style="margin-top: -10px" ;>Masukkan Password:

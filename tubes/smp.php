@@ -1,6 +1,14 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $title = 'SMP';
 $css = 'css/style5.css';
+$font = 'fontawesome/css/all.css';
 ?>
 
 <?php require('views/partials/css.php')  ?>

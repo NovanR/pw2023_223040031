@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['login'])) {
+    header("Location: ../index.php");
+    exit;
+}
+
+
 require('../views/functions.php');
 
 $id = $_GET['id'];
@@ -29,10 +37,17 @@ function ubah($data) {
     $id = $data["id"];
     // ambil data dari tiap elemen
     $nama = htmlspecialchars($data["nama"]);
-    $gambar = htmlspecialchars($data["gambar"]);
     $judul = htmlspecialchars($data["judul"]);
     $penjelasan = htmlspecialchars($data["penjelasan"]);
     $youtube = htmlspecialchars($data["youtube"]);
+    $gambarlama = htmlspecialchars($data["gambarlama"]);
+
+     // cek apakah user pilih gambar baru atau tidak
+     if($_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarlama;
+    } else {
+        $gambar = upload();
+    }
 
 
     // query insert
@@ -63,15 +78,17 @@ $css = '../css/style9.css';
 <body>
     <div class="tambah">
         <h1>Ubah Data</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $materi['id']; ?>">
+            <input type="hidden" name="gambarlama" value="<?= $materi['gambar']; ?>">
         <div class="mb-4 w-30">
                 <label for="nama" class="form-label">Nama: </label>
                 <input type="text" name="nama" class="form-control" id="nama" value="<?= $materi['nama']; ?>" required>
             </div>
             <div class="mb-4 w-30">
-                <label for="gambar" class="form-label">Gambar: </label>
-                <input type="text" name="gambar" class="form-control" id="gambar" value="<?= $materi['gambar']; ?>" required>
+                <label for="gambar" class="form-label">Gambar: </label><br>
+                <img src="../img/<?= $materi['gambar']; ?>" width="200;">
+                <input type="file" name="gambar" class="form-control" id="gambar" style="margin-top: 20px;">
             </div>
             <div class="mb-4 w-30">
                 <label for="judul" class="form-label">Judul: </label>

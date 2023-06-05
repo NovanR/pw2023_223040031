@@ -1,6 +1,19 @@
-<?php   
+<?php
+
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $title = 'SD';
 $css = 'css/style.css';
+$font = 'fontawesome/css/all.css';
+$icon = 'img/math.png';
+
+
+
 ?>
 
 <?php require('views/partials/css.php')  ?>
@@ -31,6 +44,7 @@ $css = 'css/style.css';
     .card-text {
         color: white;
     }
+
 </style>
 
 <?php require('views/partials/header2.php')  ?>

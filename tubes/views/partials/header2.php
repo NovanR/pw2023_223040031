@@ -42,17 +42,18 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                        <a class="btn btn-secondary btn-sm" href="login.php" role="button" style="background-color: lightseagreen;" target="_blank">Daftar sekarang<i class="fa-solid fa-arrow-right-to-bracket" style="padding: 
+                        <a class="btn btn-secondary btn-sm" href="logout.php" role="button" style="background-color: lightseagreen;">Logout<i class="fa-solid fa-arrow-right-to-bracket" style="padding: 
                     5px;"></i></a>
                     </span>
                     <nav class="navbar">
                         <div class="container-fluid">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            <form class="d-flex" action="" method="post">
+                                <input class="form-control me-2" type="text" name="search" id="cari" placeholder="Search" aria-label="Search" autocomplete="off">
+                                <button class="btn btn-outline-success" name="cari" id="tombol" type="submit">Cari</button>
                             </form>
                         </div>
                     </nav>
+
                 </div>
             </div>
         </nav>
