@@ -35,6 +35,17 @@
                                 <li><a class="dropdown-item" href="sma.php">
                                         <img src="img/topisma.png" alt="topi_sma" style="width: 40px; margin-left: -10px;">
                                         SMA</a></li>
+                                <?php
+                                if (isset($_SESSION['role'])) {
+                                    $user_logged_in = $_SESSION['role'];
+
+                                    if ($user_logged_in == 'admin') { ?>
+
+                                        <li>
+                                            <a class="badge text-bg-primary" href="adminn/admin.php" style="color: black; margin-left: 15px; text-decoration: none;"><i class="fa-sharp fa-solid fa-right-to-bracket" style="margin-right: 5px;"></i>Halaman Admin</a>
+                                        </li>
+                                    <?php } ?>
+                                <?php } ?>
                             </ul>
                         </li>
                         <li class="nav-item">

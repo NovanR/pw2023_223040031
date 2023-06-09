@@ -10,7 +10,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: flex; justify-content: space-between;">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
@@ -35,10 +35,9 @@
 
                             if ($user_logged_in == 'admin') { ?>
 
-                                <span class="navbar-text">
-                                    <a class="btn btn-secondary btn-sm" href="adminn/admin.php" role="button" style="background-color: lightseagreen;">Halaman Admin<i class="fa-solid fa-arrow-right-to-bracket" style="padding: 
-                    5px;"></i></a>
-                                </span>
+                                <li>
+                                    <a class="badge text-bg-primary" href="adminn/admin.php" style="color: black; margin-left: 15px;"><i class="fa-sharp fa-solid fa-right-to-bracket" style="margin-right: 5px;"></i>Halaman Admin</a>
+                                </li>
                             <?php } ?>
                         <?php } ?>
                     </ul>
@@ -67,7 +66,7 @@
                 <?php }
             } else { ?>
                 <span class="navbar-text">
-                    <a class="btn btn-secondary btn-sm" href="login.php" role="button" style="background-color: lightseagreen;">Daftar sekarang<i class="fa-solid fa-arrow-right-to-bracket" style="padding: 
+                    <a class="btn btn-secondary btn-sm" href="login.php" role="button" style="background-color: lightseagreen;">Masuk sekarang<i class="fa-solid fa-arrow-right-to-bracket" style="padding: 
                          5px;"></i></a>
                 </span>
             <?php }  ?>

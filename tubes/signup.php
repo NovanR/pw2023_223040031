@@ -84,6 +84,7 @@ if (isset($_POST['register'])) {
         <br />
         <button type="submit" name="register" style="margin-top: -10px; width: 30%">Buat Akun</button>
       </form>
+      <a href="login.php" style="margin-top: 10px; margin-right: 8px;"><i class="fa-sharp fa-solid fa-arrow-left" style="margin-right: 5px;"></i>Kembali</a>
     </div>
     <div class="gambar">
       <img src="img/math.png" alt="logo" />

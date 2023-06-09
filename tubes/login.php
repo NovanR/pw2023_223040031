@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
 
       if ($row['role'] == 'admin') {
         header("Location: adminn/admin.php");
-      } elseif ($row['role'] == 'user' ) {
+      } elseif ($row['role'] == 'user') {
         header("Location: index.php");
         exit;
       }
@@ -46,7 +46,8 @@ if (isset($_POST["submit"])) {
 <?php
 $title = 'Login';
 $css = 'css/style2.css';
-$font = 'fontawsome/css/all.css'
+$font = 'fontawesome/css/all.css';
+$icon = 'img/math.png';
 ?>
 
 <?php require('views/partials/css.php')  ?>
@@ -107,6 +108,7 @@ $font = 'fontawsome/css/all.css'
 
 
     <div class="login">
+      <a href="index.php" style="margin-bottom: 5px;"><i class="fa-sharp fa-solid fa-arrow-left" style="font-size: 20px;"></i></a>
       <h2 style="
             border-bottom: 1px solid silver;
             padding: 5px;
@@ -137,7 +139,10 @@ $font = 'fontawsome/css/all.css'
         <?php endif;  ?>
       </form>
       <div class="regist">
-        <a href="signup.php" style="margin-top: 20px;">Buat akun anda <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="signup.php" style="margin-top: 20px;">Buat akun anda <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+        <br>
+
+
       </div>
     </div>
 

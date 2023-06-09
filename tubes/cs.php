@@ -30,7 +30,7 @@ $css = 'css/style8.css';
         </div>
         <div class="form" style="margin-top: 60px; height: 100%; color: white;">
             <h3>Butuh Bantuan?</h3>
-            <form method="post">
+            <form method="post" onsubmit="sendmail(); reset(); return false;">
                 <label for="email">Masukkan Email: </label>
                 <br />
                 <div class="input-icons">
@@ -64,6 +64,7 @@ $css = 'css/style8.css';
                         background-color: turquoise;
                         margin: 10px 0 10px 0;">Kirim</button>
             </form>
+            <!-- <a href="index.php" style="margin-top: 5px; margin-left: 20px; padding: 10px;">Kembali</a> -->
         </div>
 
     </div>

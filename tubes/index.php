@@ -4,7 +4,7 @@ require('views/functions.php');
 
 $css = 'css/style7.css';
 $title = 'Home';
-$font = 'fontawesome/css/all.css';
+$font = 'fontawesome/css/all.css';  
 
 
 if (isset($_SESSION['role'])) {
@@ -25,15 +25,6 @@ if (isset($_SESSION['role'])) {
     }
 }
 
-
-
-// if (isset($_SESSION['login'])) {
-//     // Pengguna sudah login
-//     $user_logged_in = true;
-// } else {
-//     // Pengguna belum login
-//     $user_logged_in = false;
-// }
 
 ?>
 

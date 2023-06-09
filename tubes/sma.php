@@ -8,6 +8,7 @@ if(!isset($_SESSION['login'])) {
 
 $title = 'SMA';
 $css = 'css/style6.css';
+$font = 'fontawesome/css/all.css';
 ?>
 
 <?php require('views/partials/css.php')  ?>
