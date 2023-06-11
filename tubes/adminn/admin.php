@@ -15,12 +15,12 @@ if ($_SESSION['role'] !== 'admin') {
 
 require('../views/functions.php');
 $sekolah_dasar = query('SELECT * FROM sd1');
-$sekolah_dasar1 = query('SELECT * FROM sd1 WHERE nama = "kelas_1" ');
-$sekolah_dasar2 = query('SELECT * FROM sd1 WHERE nama = "kelas_2" ');
-$sekolah_dasar3 = query('SELECT * FROM sd1 WHERE nama = "kelas_3" ');
-$sekolah_dasar4 = query('SELECT * FROM sd1 WHERE nama = "kelas_4" ');
-$sekolah_dasar5 = query('SELECT * FROM sd1 WHERE nama = "kelas_5" ');
-$sekolah_dasar6 = query('SELECT * FROM sd1 WHERE nama = "kelas_6" ');
+$sekolah_dasar1 = query('SELECT * FROM sd1 WHERE id_kat = "1" ');
+$sekolah_dasar2 = query('SELECT * FROM sd1 WHERE id_kat = "2" ');
+$sekolah_dasar3 = query('SELECT * FROM sd1 WHERE id_kat = "3" ');
+$sekolah_dasar4 = query('SELECT * FROM sd1 WHERE id_kat = "4" ');
+$sekolah_dasar5 = query('SELECT * FROM sd1 WHERE id_kat = "5" ');
+$sekolah_dasar6 = query('SELECT * FROM sd1 WHERE id_kat = "6" ');
 $icon = '../img/math.png';
 $css = '../css/style4.css';
 $title = 'Halaman Admin';

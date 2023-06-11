@@ -41,6 +41,7 @@ function ubah($data) {
     $penjelasan = htmlspecialchars($data["penjelasan"]);
     $youtube = htmlspecialchars($data["youtube"]);
     $gambarlama = htmlspecialchars($data["gambarlama"]);
+    $kategori = htmlspecialchars($data['kategori']);
 
      // cek apakah user pilih gambar baru atau tidak
      if($_FILES['gambar']['error'] === 4) {
@@ -56,7 +57,8 @@ function ubah($data) {
                 gambar = '$gambar',
                 judul = '$judul',
                 penjelasan = '$penjelasan',
-                youtube = '$youtube'
+                youtube = '$youtube',
+                id_kat = '$kategori'
 
                 WHERE id = $id
                 ";
@@ -101,6 +103,10 @@ $css = '../css/style9.css';
             <div class="mb-4 w-30">
                 <label for="youtube" class="form-label">Youtube: </label>
                 <input type="text" name="youtube" class="form-control" id="youtube" value="<?= $materi['youtube']; ?>" required>
+            </div>
+            <div class="mb-4 w-30">
+                <label for="kategori" class="form-label">Kategori: </label>
+                <input type="text" name="kategori" class="form-control" id="kategori" value="<?= $materi['id_kat']; ?>" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Ubah Data</button>
             <br><br>

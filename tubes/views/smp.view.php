@@ -1,9 +1,9 @@
 <?php require('functions.php')  ?>
 <?php
 $smp = query('SELECT * FROM smp LIMIT 15, 5');
-$kelas7 = query('SELECT * FROM smp WHERE nama = "kelas_7" ');
-$kelas8 = query('SELECT * FROM smp WHERE nama = "kelas_8" ');
-$kelas9 = query('SELECT * FROM smp WHERE nama = "kelas_9" ');
+$kelas7 = query('SELECT * FROM smp WHERE id_kat = "7" ');
+$kelas8 = query('SELECT * FROM smp WHERE id_kat = "8" ');
+$kelas9 = query('SELECT * FROM smp WHERE id_kat = "9" ');
 
 if (isset($_POST["cari"])) {
     $smp = cari_smp($_POST["search"]);

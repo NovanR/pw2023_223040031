@@ -20,6 +20,7 @@ function tambah($data) {
     $judul = htmlspecialchars($data["judul"]);
     $penjelasan = htmlspecialchars($data["penjelasan"]);
     $youtube = htmlspecialchars($data["youtube"]);
+    $kategori = htmlspecialchars($data['kategori']);
 
     // upload gambar
     $gambar = upload();
@@ -30,7 +31,7 @@ function tambah($data) {
     // query insert
     $query = "INSERT INTO sd1
                VALUES
-               (null,'$nama','$gambar','$judul','$penjelasan','$youtube')";
+               (null,'$nama','$gambar','$judul','$penjelasan','$youtube','$kategori')";
 
     mysqli_query($conn, $query);
 
@@ -87,6 +88,10 @@ $css = '../css/style9.css';
             <div class="mb-4 w-30">
                 <label for="youtube" class="form-label">Youtube: </label>
                 <input type="text" name="youtube" class="form-control" id="youtube" required>
+            </div>
+            <div class="mb-4 w-30">
+                <label for="kategori" class="form-label">Kategori: </label>
+                <input type="text" name="kategori" class="form-control" id="kategori" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             <br><br>

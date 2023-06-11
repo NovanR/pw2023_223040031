@@ -9,9 +9,9 @@ if (!isset($_SESSION['login'])) {
 
 require('../views/functions.php');
 $smp = query('SELECT * FROM smp');
-$kelas7 = query('SELECT * FROM smp WHERE nama = "kelas_7" ');
-$kelas8 = query('SELECT * FROM smp WHERE nama = "kelas_8" ');
-$kelas9 = query('SELECT * FROM smp WHERE nama = "kelas_9" ');
+$kelas7 = query('SELECT * FROM smp WHERE id_kat = "7" ');
+$kelas8 = query('SELECT * FROM smp WHERE id_kat = "8" ');
+$kelas9 = query('SELECT * FROM smp WHERE id_kat = "9" ');
 $icon = '../img/math.png';
 $css = '../css/style4.css';
 $title = 'Halaman Admin';

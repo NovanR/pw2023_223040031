@@ -1,9 +1,9 @@
 <?php require('functions.php')  ?>
 <?php
 $sma = query('SELECT * FROM sma LIMIT 15, 5');
-$kelas10 = query('SELECT * FROM sma WHERE nama = "kelas_10" ');
-$kelas11 = query('SELECT * FROM sma WHERE nama = "kelas_11" ');
-$kelas12 = query('SELECT * FROM sma WHERE nama = "kelas_12" ');
+$kelas10 = query('SELECT * FROM sma WHERE id_kat = "10" ');
+$kelas11 = query('SELECT * FROM sma WHERE id_kat = "11" ');
+$kelas12 = query('SELECT * FROM sma WHERE id_kat = "12" ');
 
 if (isset($_POST["cari"])) {
     $sma = cari_sma($_POST["search"]);

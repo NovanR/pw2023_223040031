@@ -9,9 +9,9 @@ if (!isset($_SESSION['login'])) {
 
 require('../views/functions.php');
 $sma = query('SELECT * FROM sma');
-$kelas10 = query('SELECT * FROM sma WHERE nama = "kelas_10" ');
-$kelas11 = query('SELECT * FROM sma WHERE nama = "kelas_11" ');
-$kelas12 = query('SELECT * FROM sma WHERE nama = "kelas_12" ');
+$kelas10 = query('SELECT * FROM sma WHERE id_kat = "10" ');
+$kelas11 = query('SELECT * FROM sma WHERE id_kat = "11" ');
+$kelas12 = query('SELECT * FROM sma WHERE id_kat = "12" ');
 $icon = '../img/math.png';
 $css = '../css/style4.css';
 $title = 'Halaman Admin';
