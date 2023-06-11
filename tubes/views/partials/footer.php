@@ -52,6 +52,10 @@
 
         </div>
     </div>
+    
+    <div class="copyright">
+        <p style="text-align: center; background-color: turquoise; padding: 20px; margin-left: -20px;">Copyright<i class="fa-regular fa-copyright" style="padding-left: 10px; padding-right: 10px;"></i>Novan Ramdan 2023</p>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
